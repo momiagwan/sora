@@ -47,7 +47,7 @@ const BlogByCategory = () => {
                     {expanded[b._id]
                       ? b.content
                       : b.content.length > 150
-                      ? b.content.slice(0, 150) + "..."
+                      ? b.content.slice(0, 250) + "..."
                       : b.content}
                   </p>
                 </div>
