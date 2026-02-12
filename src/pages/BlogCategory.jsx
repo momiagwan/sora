@@ -46,14 +46,14 @@ const BlogByCategory = () => {
                   >
                     {expanded[b._id]
                       ? b.content
-                      : b.content.length > 150
+                      : b.content.length > 250
                       ? b.content.slice(0, 250) + "..."
                       : b.content}
                   </p>
                 </div>
 
                 {/* Read More / Show Less button */}
-                {b.content.length > 150 && (
+                {b.content.length > 250 && (
                   <button
                     onClick={() => toggleReadMore(b._id)}
                     className="mt-4 text-indigo-400 hover:text-indigo-300 font-semibold self-start transition-colors duration-300"
