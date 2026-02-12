@@ -5,6 +5,7 @@ import axios from "axios";
 const BlogByCategory = () => {
   const { category } = useParams();
   const [blogs, setBlogs] = useState([]);
+  const [expanded, setExpanded] = useState({}); // Track expanded state per blog
 
   useEffect(() => {
     axios
@@ -12,6 +13,10 @@ const BlogByCategory = () => {
       .then((res) => setBlogs(res.data))
       .catch((err) => console.error(err));
   }, [category]);
+
+  const toggleReadMore = (id) => {
+    setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
 
   return (
     <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-black min-h-screen py-12 px-6">
@@ -34,13 +39,28 @@ const BlogByCategory = () => {
                   <p className="italic text-sm text-gray-400 mb-4">
                     Category: {b.category}
                   </p>
-                  <p className="text-gray-200 text-base leading-relaxed font-serif line-clamp-6">
-                    {b.content}
+
+                  {/* Blog content with expandable text */}
+                  <p
+                    className={`text-gray-200 text-base leading-relaxed font-serif transition-all duration-300`}
+                  >
+                    {expanded[b._id]
+                      ? b.content
+                      : b.content.length > 150
+                      ? b.content.slice(0, 150) + "..."
+                      : b.content}
                   </p>
                 </div>
-                <button className="mt-6 bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300 self-start">
-                  Read More
-                </button>
+
+                {/* Read More / Show Less button */}
+                {b.content.length > 150 && (
+                  <button
+                    onClick={() => toggleReadMore(b._id)}
+                    className="mt-4 text-indigo-400 hover:text-indigo-300 font-semibold self-start transition-colors duration-300"
+                  >
+                    {expanded[b._id] ? "Show Less" : "Read More"}
+                  </button>
+                )}
               </div>
             ))
           ) : (
