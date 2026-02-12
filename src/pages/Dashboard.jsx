@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useAuth } from "../AuthContext.jsx"
+import { useAuth } from "../AuthContext.jsx";
 
 const AdminDashboard = () => {
   const [blogs, setBlogs] = useState([]);
@@ -11,16 +11,24 @@ const AdminDashboard = () => {
   const headers = { Authorization: `Bearer ${token}` };
 
   const fetchBlogs = async () => {
-    const res = await axios.get("http://localhost:3000/api/blogs");
+    const res = await axios.get("https://backendsorath.vercel.app/api/blogs");
     setBlogs(res.data);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (editId) {
-      await axios.put(`http://localhost:3000/api/blogs/${editId}`, form, { headers });
+      await axios.put(
+        `https://backendsorath.vercel.app/api/blogs/${editId}`,
+        form,
+        {
+          headers,
+        },
+      );
     } else {
-      await axios.post("http://localhost:3000/api/blogs", form, { headers });
+      await axios.post("https://backendsorath.vercel.app/api/blogs", form, {
+        headers,
+      });
     }
     setForm({ title: "", content: "", category: "" });
     setEditId(null);
@@ -28,12 +36,18 @@ const AdminDashboard = () => {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3000/api/blogs/${id}`, { headers });
+    await axios.delete(`https://backendsorath.vercel.app/api/blogs/${id}`, {
+      headers,
+    });
     fetchBlogs();
   };
 
   const handleEdit = (blog) => {
-    setForm({ title: blog.title, content: blog.content, category: blog.category });
+    setForm({
+      title: blog.title,
+      content: blog.content,
+      category: blog.category,
+    });
     setEditId(blog._id);
   };
 
@@ -74,10 +88,16 @@ const AdminDashboard = () => {
             <h3 className="text-lg font-bold">{b.title}</h3>
             <p className="text-sm italic">Category: {b.category}</p>
             <p>{b.content}</p>
-            <button onClick={() => handleEdit(b)} className="text-blue-600 mr-2">
+            <button
+              onClick={() => handleEdit(b)}
+              className="text-blue-600 mr-2"
+            >
               Edit
             </button>
-            <button onClick={() => handleDelete(b._id)} className="text-red-600">
+            <button
+              onClick={() => handleDelete(b._id)}
+              className="text-red-600"
+            >
               Delete
             </button>
           </div>

@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -9,7 +8,7 @@ const BlogByCategory = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/blogs/category/${category}`)
+      .get(`https://backendsorath.vercel.app/api/blogs/category/${category}`)
       .then((res) => setBlogs(res.data));
   }, [category]);
 

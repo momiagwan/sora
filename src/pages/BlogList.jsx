@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -6,7 +5,9 @@ const BlogList = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/blogs").then((res) => setBlogs(res.data));
+    axios
+      .get("https://backendsorath.vercel.app/api/blogs")
+      .then((res) => setBlogs(res.data));
   }, []);
 
   return (
