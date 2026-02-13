@@ -260,7 +260,7 @@ export const platformLinks = [
   { href: "/posts/category/education", text: "Educational Committee event" },
   { href: "/posts/category/webinars", text: "Webinars" },
   { href: "/elections", text: "Elections" },
-  { href: "/posts/category/general-body-ijlas", text: "General-body-ijlaas" },
+  { href: "/posts/category/general body ijlas", text: "General body ijlaas" },
   { href: "/posts/category/pilgrims", text: "welcoming pilgrims" },
 ];
 
