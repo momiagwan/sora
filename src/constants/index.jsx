@@ -257,10 +257,10 @@ export const resourcesLinks = [
 ];
 
 export const platformLinks = [
-  { href: "/posts/category/education", text: "Educational Commitee event" },
+  { href: "/posts/category/education", text: "Educational Committee event" },
   { href: "/posts/category/webinars", text: "Webinars" },
   { href: "/elections", text: "Elections" },
-  { href: "/posts/category/generalbodyijlas", text: "General-body-ijlaas" },
+  { href: "/posts/category/general-body-ijlas", text: "General-body-ijlaas" },
   { href: "/posts/category/pilgrims", text: "welcoming pilgrims" },
 ];
 
@@ -269,7 +269,7 @@ export const communityLinks = [
   { href: "https://archive.org/details/in.ernet.dli.2015.547151", text: "Members book" },
   { href: "/clans", text: "Clans history" },
   { href: "https://archive.org/details/in.ernet.dli.2015.547151", text: "Presidential history" },
-  { href: "https://archive.org/details/in.ernet.dli.2015.547151", text: "Sectional head of each commitee" },
+  { href: "https://archive.org/details/in.ernet.dli.2015.547151", text: "Sectional head of each committee" },
 ];
 export const clans=[
   {user:"Agwan",
