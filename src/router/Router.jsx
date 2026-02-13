@@ -64,7 +64,7 @@ const Router = () => {
           <ProtectedRoute>
             <AdminDashboard />
           </ProtectedRoute>} />
-        <Route path='/elections' element={<Election/>}/>
+        
   
         <Route  path='/login' element={<Login/>}/>
     
