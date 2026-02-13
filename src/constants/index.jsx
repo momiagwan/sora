@@ -249,7 +249,7 @@ export const pricingOptions = [
 ];
 
 export const resourcesLinks = [
-  {href: "/posts/category/marriages", text: "Recent marriges"  },
+  {href: "/posts/category/marriages", text: "Recent marriages"  },
   { href: "/posts/category/death", text: "Recent deaths" },
   { href: "/posts/category/warnings", text: "Warning to members" },
   { href: "/posts/category/notifications", text: "Notifications" },
@@ -260,7 +260,7 @@ export const platformLinks = [
   { href: "/posts/category/education", text: "Educational Committee event" },
   { href: "/posts/category/webinars", text: "Webinars" },
   { href: "/posts/category/elections", text: "Elections" },
-  { href: "/posts/category/general body ijlas", text: "General body ijlaas" },
+  { href: "/posts/category/General Body Ijlas", text: "General body ijlaas" },
   { href: "/posts/category/pilgrims", text: "welcoming pilgrims" },
 ];
 
