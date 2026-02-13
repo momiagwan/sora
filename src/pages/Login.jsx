@@ -23,7 +23,7 @@ const LoginPage = () => {
       login(res.data.token);
       navigate("/dashboard");
     } catch {
-      setError("Invalid email or password");
+      setError("Invalid email/Username or password");
     }
   };
 
@@ -42,8 +42,8 @@ const LoginPage = () => {
           {/* Email */}
           <div>
             <input
-              type="email"
-              placeholder="Enter your email"
+              type="text"
+              placeholder="Enter your email/username"
               value={email}
               onChange={(e) => setemail(e.target.value)}
               required
